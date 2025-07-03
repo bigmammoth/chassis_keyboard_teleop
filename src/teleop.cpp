@@ -48,13 +48,13 @@ tp::KeyboardTeleop::KeyboardTeleop()
     : Node("chassis_keyboard_teleop")
 {
     /* ---- 读取参数 ---- */
-    max_lin_ = declare_parameter("max_linear", 0.8);                    // m/s
-    max_ang_ = declare_parameter("max_angular", 1.8);                   // rad/s
-    accel_lin_ = declare_parameter("linear_accel", 0.3);                // m/s²
-    decel_lin_ = declare_parameter("linear_decel", 0.4);                // m/s²
-    accel_ang_ = declare_parameter("angular_accel", 1.0);               // rad/s²
-    decel_ang_ = declare_parameter("angular_decel", 1.2);               // rad/s²
-    event_path_ = declare_parameter("event_path", "/dev/input/event0"); // 键盘设备
+    max_lin_ = declare_parameter("max_linear", 0.8);                     // m/s
+    max_ang_ = declare_parameter("max_angular", 1.8);                    // rad/s
+    accel_lin_ = declare_parameter("linear_accel", 0.3);                 // m/s²
+    decel_lin_ = declare_parameter("linear_decel", 0.4);                 // m/s²
+    accel_ang_ = declare_parameter("angular_accel", 1.0);                // rad/s²
+    decel_ang_ = declare_parameter("angular_decel", 1.2);                // rad/s²
+    event_path_ = declare_parameter("event_path", "/dev/input/event0");  // 键盘设备
 
     /* ---- ROS pub / sub ---- */
     cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
@@ -83,7 +83,6 @@ tp::KeyboardTeleop::KeyboardTeleop()
  *
  * Stops the input thread if running, waits for it to join, and cleans up the evdev device.
  */
-
 tp::KeyboardTeleop::~KeyboardTeleop()
 {
     running_ = false;
