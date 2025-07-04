@@ -17,12 +17,12 @@ def generate_launch_description():
             name='keyboard_teleop',
             output='screen',
             parameters=[{'max_linear': 1.0,
-                        'max_angular': 1.0,
-                        'linear_accel': 0.5,
-                        'linear_decel': 0.5,
-                        'angular_accel': 1.0,
-                        'angular_decel': 1.0,
-                        'event_path': '/dev/input/event19'
+                        'max_angular': 9.0,
+                        'linear_accel': 1.0,
+                        'linear_decel': 2.0,
+                        'angular_accel': 9.0,
+                        'angular_decel': 18.0,
+                        'event_path': '/dev/input/event4'
             }]
         ),
     ])
